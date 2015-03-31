@@ -12,21 +12,12 @@ body {
 	color: white;
 }
 
-document.onkeydown=function(){
-    if(window.event.keyCode=='13'){
-        areAnagrams();
-    }
-}
-
-input{
-   text-align:center;
-}
-
 input{
 	font-size:35px;
 	border: none;
 	background: #FFF;
 	width: 180px;
+	text-align:center;
 }
 
 
@@ -79,6 +70,12 @@ function areAnagrams() {
 	document.getElementById("result").innerHTML = "Oh no! The two words are not anagrams of each other."
 	document.getElementById("changeImage").src = "http://s3.postimg.org/rrpiegdgj/notanagram.jpg";
 	};
+}
+
+document.onkeydown=function(){
+    if(window.event.keyCode=='13'){
+        areAnagrams();
+    }
 }
 
 </script>
