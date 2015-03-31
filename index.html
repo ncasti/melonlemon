@@ -53,7 +53,11 @@ function areAnagrams() {
 	if(s1.length === 0 || s2.length === 0){
 	document.getElementById("result").innerHTML = "Hey! Remember to type in one word in each text field before submitting.";
 	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
-	} else if (!/^[a-zA-Z]+$/.test(s1) || !/^[a-zA-Z]+$/.test(s2)){
+	} else if (s1 == s2) {
+	document.getElementById("result").innerHTML = "The words need to be different in order to be anagrams of each other. Try again.";
+	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
+	}
+	else if (!/^[a-zA-Z]+$/.test(s1) || !/^[a-zA-Z]+$/.test(s2)){
 		document.getElementById("result").innerHTML = "Oops! Only alphabetic characters are allowed. Please try again.";
 		document.getElementById("changeImage").src = "http://s21.postimg.org/oscwtfh53/error.jpg";
 	}
