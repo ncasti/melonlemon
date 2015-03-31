@@ -17,10 +17,10 @@ function areAnagrams() {
 	};
 // Used the internet to review regular expressions.
 	if(s1.length === 0 || s2.length === 0){
-	document.getElementById("result").innerHTML = "Hey! Remember to type in one word in each text field before submitting.";
+	document.getElementById("result").innerHTML = "Hey! Remember to type in one word or phrase in each text field before submitting.";
 	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
 	} else if (s1 == s2) {
-	document.getElementById("result").innerHTML = "The words need to be different in order to be anagrams of each other. Try again.";
+	document.getElementById("result").innerHTML = "The words or phrases need to be different in order to be anagrams of each other. Try again.";
 	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
 	}
 	else if (!/^[a-zA-Z ]+$/.test(s1) || !/^[a-zA-Z ]+$/.test(s2)){
@@ -28,10 +28,10 @@ function areAnagrams() {
 		document.getElementById("changeImage").src = "http://s21.postimg.org/oscwtfh53/error.jpg";
 	}
 	else if (isAnagram(s1,s2)){
-	document.getElementById("result").innerHTML = "Yay! The two words are anagrams of each other.";
+	document.getElementById("result").innerHTML = "Yay! They are anagrams of each other.";
 	document.getElementById("changeImage").src = "http://s11.postimg.org/e99xsslxf/areanagrams.jpg";
 	} else {
-	document.getElementById("result").innerHTML = "Oh no! The two words are not anagrams of each other."
+	document.getElementById("result").innerHTML = "Oh no! They are not anagrams of each other."
 	document.getElementById("changeImage").src = "http://s3.postimg.org/rrpiegdgj/notanagram.jpg";
 	};
 }
