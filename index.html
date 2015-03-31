@@ -57,13 +57,17 @@ function areAnagrams() {
 // Used the internet to review regular expressions.
 	if(s1.length === 0 || s2.length === 0){
 	document.getElementById("result").innerHTML = "Hey! Remember to fill out both text fields with strings before submitting.";
+	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
 	} else if (!/^[a-zA-Z]+$/.test(s1) || !/^[a-zA-Z]+$/.test(s2)){
 		document.getElementById("result").innerHTML = "Oops! Only alphabetic characters are allowed. Please try again.";
+		document.getElementById("changeImage").src = "http://s21.postimg.org/oscwtfh53/error.jpg";
 	}
 	else if (isAnagram(s1,s2)){
 	document.getElementById("result").innerHTML = "Yay! The two strings are anagrams of each other.";
+	document.getElementById("changeImage").src = "http://s11.postimg.org/e99xsslxf/areanagrams.jpg";
 	} else {
 	document.getElementById("result").innerHTML = "Oh no! The two strings are not anagrams of each other."
+	document.getElementById("changeImage").src = "http://s3.postimg.org/rrpiegdgj/notanagram.jpg";
 	};
 }
 
@@ -73,7 +77,7 @@ function areAnagrams() {
 
 <div class="container">
 <div id="element">
-<img src="http://s3.postimg.org/583m56mg3/melonlemon.jpg">
+<img id="changeImage" src="http://s3.postimg.org/583m56mg3/melonlemon.jpg">
 <h1>melon and lemon</h1>
 <input id="input1" type="text">
 <input id="input2" type="text">
