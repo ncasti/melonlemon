@@ -40,13 +40,12 @@ function areAnagrams() {
 	var s2 = document.getElementById("input2").value;
 	
 	var isAnagram = function(string1, string2) {
-		var onlyLetters = function(str) {
-			//Filters symbols, numbers and spaces; sorted letters are elements of array
+		var orderedLetters = function(str) {
 			var array = str.toUpperCase().split('').sort();
 			return array;
 		};
-		var arr1 = onlyLetters(string1)
-		var arr2 = onlyLetters(string2)
+		var arr1 = orderedLetters(string1)
+		var arr2 = orderedLetters(string2)
 
 		if (arr1.length != arr2.length) {return false;}
 		for (var i=0; i<arr1.length; i++) {
@@ -55,7 +54,7 @@ function areAnagrams() {
 
 		return true;
 	};
-
+// Used the internet to review regular expressions.
 	if(s1.length === 0 || s2.length === 0){
 	document.getElementById("result").innerHTML = "Hey! Remember to fill out both text fields with strings before submitting.";
 	} else if (!/^[a-zA-Z]+$/.test(s1) || !/^[a-zA-Z]+$/.test(s2)){
