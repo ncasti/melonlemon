@@ -38,7 +38,7 @@ function areAnagrams() {
 	
 	var isAnagram = function(string1, string2) {
 		var orderedLetters = function(str) {
-			var array = str.toUpperCase().split('').sort();
+			var array = str.replace(/[^a-zA-Z]+/g, '').split('').sort();
 			return array;
 		};
 		var arr1 = orderedLetters(string1)
@@ -57,7 +57,7 @@ function areAnagrams() {
 	document.getElementById("result").innerHTML = "The words need to be different in order to be anagrams of each other. Try again.";
 	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
 	}
-	else if (!/^[a-zA-Z]+$/.test(s1) || !/^[a-zA-Z]+$/.test(s2)){
+	else if (!/^[a-zA-Z ]+$/.test(s1) || !/^[a-zA-Z ]+$/.test(s2)){
 		document.getElementById("result").innerHTML = "Oops! Only alphabetic characters are allowed. Please try again.";
 		document.getElementById("changeImage").src = "http://s21.postimg.org/oscwtfh53/error.jpg";
 	}
