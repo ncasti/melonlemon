@@ -1,82 +1,8 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-<style>
-body {
-	font-family: 'Noto Sans', sans-serif;
-	font-size: 18px;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	background-color: #9dd4fe;
-	color: white;
-}
-input{
-	font-size:35px;
-	border: none;
-	background: #FFF;
-	width: 180px;
-	text-align:center;
-}
-.container {
-  position:absolute; height:100%; width:100%;
-  display: table;
-}
-#element {
-	display: table-cell;
-	vertical-align: middle;
-}
-h1{
-	font-size: 50px;
-}
-</style>
-
-<script>
-function areAnagrams() {
-	var s1 = document.getElementById("input1").value;
-	var s2 = document.getElementById("input2").value;
-	
-	var orderedLetters = function(str) {
-		var array = str.replace(/[^a-zA-Z]+/g, '').split('').sort();
-		return array;
-		};
-		
-	var arr1 = orderedLetters(s1)
-	var arr2 = orderedLetters(s2)
-	var isAnagram = function (array1, array2) {
-	if (arr1.length != arr2.length) {return false;}
-	for (var i=0; i<arr1.length; i++) {
-	if(arr1[i] != arr2[i]) {return false;}
-	}
-	return true;
-	};
-// Used the internet to review regular expressions.
-	if(s1.length === 0 || s2.length === 0){
-	document.getElementById("result").innerHTML = "Hey! Remember to type in one word in each text field before submitting.";
-	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
-	} 
-	else if (!/^[a-zA-Z ]+$/.test(s1) || !/^[a-zA-Z ]+$/.test(s2)){
-		document.getElementById("result").innerHTML = "Oops! Only alphabetic characters are allowed. Please try again.";
-		document.getElementById("changeImage").src = "http://s21.postimg.org/oscwtfh53/error.jpg";
-	}
-	else if (s1.replace(/[^a-zA-Z]+/g, '') == s2.replace(/[^a-zA-Z]+/g, '')) {
-	document.getElementById("result").innerHTML = "The words need to be different in order to be anagrams of each other. Try again.";
-	document.getElementById("changeImage").src = "http://s24.postimg.org/6lajft16d/nosmile.jpg";
-	}
-	else if (isAnagram(s1,s2)){
-	document.getElementById("result").innerHTML = "Yay! The two words are anagrams of each other.";
-	document.getElementById("changeImage").src = "http://s11.postimg.org/e99xsslxf/areanagrams.jpg";
-	} else {
-	document.getElementById("result").innerHTML = "Oh no! The two words are not anagrams of each other."
-	document.getElementById("changeImage").src = "http://s3.postimg.org/rrpiegdgj/notanagram.jpg";
-	};
-}
-document.onkeydown=function(){
-    if(window.event.keyCode=='13'){
-        areAnagrams();
-    }
-}
-</script>
+<link href='stylesheet.css' rel='stylesheet' type='text/css'>
+<script src="jsfile.js"></script>
 </head>
 <body>
 
