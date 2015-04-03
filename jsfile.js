@@ -4,7 +4,7 @@ function areAnagrams() {
 	
 	var isAnagram = function(string1, string2) {
 		var orderedLetters = function(str) {
-			var array = str.replace(/[^a-zA-Z]+/g, '').split('').sort();
+			var array = str.replace(/[^a-zA-Z]+/g, '').toUpperCase().split('').sort();
 			return array;
 		};
 		var arr1 = orderedLetters(string1)
